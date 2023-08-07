@@ -27,6 +27,10 @@ jobs:
         path: |
           ./vulpy.html
 
-    - name: Slack Notification
-      run: |
-       curl -F "file=@vulpy.html" -F "initial_comment=report" -F "channels=D05LN398SMA" -H "Authorization: Bearer ${{ secrets.SLACK_BOT }}" https://slack.com/api/files.upload
+    - name: Send custom JSON data to Slack workflow
+      id: slack
+      uses: slackapi/slack-github-action@v1.24.0
+      with:
+       payload-file-path: "./vulpy.html"
+      env:
+       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
