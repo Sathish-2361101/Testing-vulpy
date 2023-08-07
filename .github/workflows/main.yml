@@ -26,3 +26,7 @@ jobs:
         name: Python_Sec_Report
         path: |
           ./vulpy.html
+
+    - name: Slack Notification
+      run: |
+       curl -F file=@vulnpy.html "-F "initial_commen"t=report" -F "channels=D05LN398SMA" -H "Authorization: Bearer ${{ secrets.SLACK_BOT }}" https://slack.com/api/files.upload
