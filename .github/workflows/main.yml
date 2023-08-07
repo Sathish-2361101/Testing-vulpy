@@ -22,7 +22,7 @@ jobs:
 
     - name: Slack Notification
       run: |
-       curl -F "file=@vulnpy.html" -F "initial_comment=report" -F "channels=D05LN398SMA" -H "Authorization: Bearer ${{ secrets.SLACK_BOT }}" https://slack.com/api/files.upload
+       curl -F "file=@vulpy.html" -F "initial_comment=report" -F "channels=D05LN398SMA" -H "Authorization: Bearer ${{ secrets.SLACK_BOT }}" https://slack.com/api/files.upload
 
     - name: Report Upload
       uses: actions/upload-artifact@v2
