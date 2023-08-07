@@ -18,7 +18,7 @@ jobs:
 
     - name: Bandit Scan
       run: |
-       bandit -f html -o ./vulpy.html .
+       bandit -f html -o ./vulpy.html -r .
 
     - name: Report Upload
       uses: actions/upload-artifact@v2
