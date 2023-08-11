@@ -2,7 +2,7 @@ name: "Bandit-scan"
 
 on:
   push:
-    branches: [master]
+    branches: [master, main]
 
 jobs:
   Bandit-Scan:
